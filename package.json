@@ -1,0 +1,23 @@
+{
+  "name": "pagina_de_investimentos",
+  "version": "1.0.0",
+  "description": "Este é um programa para cálculo de investimentos, juros e montante.  Com suporte para verificação de cotação de outros câmbios.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
+    "tsc": "tsc ./src/index.ts -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusDrumond/pagina_de_investimentos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheusDrumond/pagina_de_investimentos/issues"
+  },
+  "homepage": "https://github.com/matheusDrumond/pagina_de_investimentos#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}
