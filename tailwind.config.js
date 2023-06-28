@@ -16,6 +16,9 @@ module.exports = {
     animation: {
       upDown: 'upDown 10s ease-in-out infinite'
     },
+    fontFamily: {
+      'Oswald': ['Oswald', 'sans-serif'] 
+    }
   },
   plugins: [],
 }

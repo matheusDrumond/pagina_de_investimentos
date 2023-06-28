@@ -4,8 +4,7 @@
   "description": "Este é um programa para cálculo de investimentos, juros e montante.  Com suporte para verificação de cotação de outros câmbios.",
   "main": "index.js",
   "scripts": {
-    "start": "npx tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
-    "tsc": "tsc ./src/index.ts -w"
+    "start": "npx tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch"
   },
   "repository": {
     "type": "git",
