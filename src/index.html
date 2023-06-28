@@ -7,6 +7,7 @@
     <title>Drumond Invest</title>
 </head>
 <body class="h-screen w-full">
+	<!--Barra de navegação-->
     <nav class="flex flex-row p-5 fixed h-16 w-full bg-gray-700/40 backdrop-blur-md items-center shadow-lg z-50">
 		<span class="text-2xl leading-5 uppercase font-bold text-white">Invest <img src="../public/img/logo.png" class="h-6 w-6 inline-block ml-2 mb-1"></span>
 		<ul class="flex flex-row gap-x-5 ml-auto">
@@ -15,28 +16,33 @@
 			<li class="text-lg text-white leading-4 uppercase font-bold cursor-pointer hover:text-green-500 hover:duration-500"><a href="#cotacoes">Câmbios</a></li class="text-lg leading-5 uppercase">
 		</ul>
     </nav>
+	<!--Home Page-->
 	<section id="home-page" class="h-screen w-full bg-gradient-to-br from-gray-700 to-green-500 pt-16 flex flex-row">
 		<div class="basis-1/2 flex flex-col gap-y-8 justify-center p-12">
 		<h2 class="text-6xl text-green-100 font-bold uppercase drop-shadow-3xl font-Oswald">Seja bem-vindo</h2>
 		<p class="text-3xl font-bold text-green-100 uppercase -mt-6 font-Oswald">Oque você deseja ver?</p>
+		<!--Opções de sections-->
 		<ul class="bg-gray-400 w-fit rounded-lg shadow-md">
 		<li class="text-xl text-gray-900 cursor-pointer hover:bg-green-600/80 pr-7 pl-4 py-2 hover:rounded-t-lg font-bold duration-500"><a href="#rendimento">Rentabilidade</a> <img src="../public/img/investimentos-logo.png" class="h-6 w-6 inline-block ml-2"></li>
 		<li class="text-xl text-gray-900 cursor-pointer hover:bg-green-600/80 pr-7 pl-4 py-2 hover:rounded-b-lg font-bold duration-500">Cotações <img src="../public/img/cotacoes-logo.png" class="h-6 w-6 inline-block ml-2"></li>
 		</ul>
 	</div>
+	<!--Sticker animado-->
 	<img src="../public/img/business-report.png" alt="Animação de um homem segurando gráfico" class="drop-shadow-2xl animate-upDown h-fit">
 	</section>
+	<!--Página de cálculo de rentabilidade-->
 	<section id="rendimento" class="h-screen w-full p-16 bg-gradient-to-tr from-emerald-500 to-green-500 flex flex-col items-center justify-center gap-y-10">
 		<h2 class="text-5xl uppercase text-white font-Oswald font-bold w-full z-20 drop-shadow-2xl">Aqui você pode ver quanto o seu dinheiro vai render ao longo do tempo...</h2>
+		<!--Campos para calcular-->
 		<div class="flex flex-row bg-green-400/80 pt-6 p-10 rounded-3xl justify-between w-full shadow-xl z-20">
 			<div>
-				<label for="number" class="text-white text-lg flex-auto block">Valor inicial</label>
-				<input type="number" id="capital" name="capital" class="rounded-md mt-2">
+				<label for="valorInicial" class="text-white text-lg flex-auto block">Valor inicial</label>
+				<input type="number" id="valorInicial" name="valorInicial" class="rounded-md mt-2" required>
 			</div>
 
 			<div>
 				<label for="juros" class="text-white text-lg block">Taxa de juros</label>
-				<input type="number" id="juros" class="rounded-md mt-2">
+				<input type="number" id="juros" class="rounded-md mt-2" required><p class="inline-block text-base text-white ml-2">%</p>
 
 				<label for="p-month" class="text-white text-sm ml-2">p/ mês</label>
 				<input type="radio" id="p-month" name="yearOrMonth" value="p-month" class="accent-green-400">
@@ -47,16 +53,14 @@
 			</div>
 			<div>
 				<p class="text-white text-lg block mb-2">Tipo de juros</p>
-
-				<label for="juros-type" class="text-white text-sm">Simples</label>
-				<input type="radio" id="simples" name="juros-type" value="simples" class="accent-green-400">
-
-				<label for="juros-type" class="text-white text-sm">Composto</label>
-				<input type="radio" id="composto" name="juros-type" value="composto" class="accent-green-400">
+				<select name="type-juros" id="type" class="p-1 rounded-md text-green-500">
+					<option value="simples" class="hover:bg-green-200">Simples</option>
+					<option value="composto">Composto</option>
+				</select>
 			</div>
 			<div>
 				<label for="time" class="text-white text-lg block">Tempo</label>
-				<input type="number" id="time" name="time" class="rounded-md mt-2">
+				<input type="number" id="time" name="time-type" class="rounded-md mt-2">
 
 					<label for="month" class="text-white text-sm ml-2">meses</label>
 					<input type="radio" id="month" name="time-type" value="month" class="accent-green-400">
@@ -64,10 +68,14 @@
 					<label for="year" class="text-white text-sm">anos</label>
 					<input type="radio" id="year" name="time-type" value="year" class="accent-green-400">
 			</div>
-			<div>
-				<p class="text-white text-lg">Resultado:</p>
-				<p class="min-w-8 bg-white rounded-md mt-2 text-white" id="resultado">x</p>
-			</div>
+			<button id="calcular" class="px-4 py-2 border-2 border-transparent bg-white rounded-lg justify-self-center my-auto 
+			text-green-500 font-bold uppercase ml-2 hover:bg-green-400 hover:text-white hover:border-white hover:duration-300">
+			Calcular
+			</button>
+		</div>
+		<div>
+			<p class="text-white text-lg">Resultado:</p>
+			<p class="min-w-8 bg-white rounded-md mt-2 text-white" id="resultado">x</p>
 		</div>
 	</section>
     <script src="index.js"></script>
