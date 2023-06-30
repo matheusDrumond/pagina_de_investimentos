@@ -37,36 +37,33 @@
 		<div class="flex flex-row bg-green-400/80 pt-6 p-10 rounded-3xl justify-between w-full shadow-xl z-20">
 			<div>
 				<label for="valorInicial" class="text-white text-lg flex-auto block">Valor inicial</label>
-				<input type="number" id="valorInicial" name="valorInicial" class="rounded-md mt-2" required>
+				<input type="number" id="valorInicial" name="valorInicial" class="rounded-md mt-2" value="" required>
 			</div>
 
 			<div>
 				<label for="juros" class="text-white text-lg block">Taxa de juros</label>
-				<input type="number" id="juros" class="rounded-md mt-2" required><p class="inline-block text-base text-white ml-2">%</p>
-
-				<label for="p-month" class="text-white text-sm ml-2">p/ mês</label>
-				<input type="radio" id="p-month" name="yearOrMonth" value="p-month" class="accent-green-400">
-
-				<label for="p-year" class="text-white text-sm">p/ ano</label>
-				<input type="radio" id="p-year" name="yearOrMonth" value="p-year" class="accent-green-400">
-
+				<input type="number" id="juros" class="rounded-md mt-2" required value=""><p class="inline-block text-base text-white ml-2">%</p>
+				 
+				<select name="periodo" id="periodo" class="p-sm text-sm rounded-md text-green-500">
+					<option value="p-month">p/ mês</option>
+					<option value="p-year">p/ ano</option>
+				</select>
 			</div>
 			<div>
 				<p class="text-white text-lg block mb-2">Tipo de juros</p>
 				<select name="type-juros" id="type" class="p-1 rounded-md text-green-500">
-					<option value="simples" class="hover:bg-green-200">Simples</option>
+					<option value="simples" >Simples</option>
 					<option value="composto">Composto</option>
 				</select>
 			</div>
 			<div>
 				<label for="time" class="text-white text-lg block">Tempo</label>
-				<input type="number" id="time" name="time-type" class="rounded-md mt-2">
+				<input type="number" id="time" name="time-type" class="rounded-md mt-2" value="">
 
-					<label for="month" class="text-white text-sm ml-2">meses</label>
-					<input type="radio" id="month" name="time-type" value="month" class="accent-green-400">
-	
-					<label for="year" class="text-white text-sm">anos</label>
-					<input type="radio" id="year" name="time-type" value="year" class="accent-green-400">
+				<select name="time-type" id="time-type" class="p-sm text-sm rounded-md text-green-500">
+					<option value="month">meses</option>
+					<option value="years">anos</option>
+				</select>
 			</div>
 			<button id="calcular" class="px-4 py-2 border-2 border-transparent bg-white rounded-lg justify-self-center my-auto 
 			text-green-500 font-bold uppercase ml-2 hover:bg-green-400 hover:text-white hover:border-white hover:duration-300">
