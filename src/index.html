@@ -9,7 +9,7 @@
 <body class="h-screen w-full">
 	<!--Barra de navegação-->
     <nav class="flex flex-row p-5 fixed h-16 w-full bg-gray-700/40 backdrop-blur-md items-center shadow-lg z-50">
-		<span class="text-2xl leading-5 uppercase font-bold text-white">Invest <img src="../public/img/logo.png" class="h-6 w-6 inline-block ml-2 mb-1"></span>
+		<span class="text-2xl leading-5 uppercase font-bold text-white">Invest <img src="../public/img/logo.png" class="h-6 w-6 ml-2 mb-1 inline-block"></span>
 		<ul class="flex flex-row gap-x-5 ml-auto">
 			<li class="text-lg text-white leading-4 uppercase font-bold cursor-pointer hover:text-green-500 hover:duration-500"><a href="#home-page">home</a></li class="text-lg leading-5 uppercase">
 			<li class="text-lg text-white leading-4 uppercase font-bold cursor-pointer hover:text-green-500 hover:duration-500"><a href="#rendimento">Rendimentos</a></li class="text-lg leading-5 uppercase">
@@ -19,19 +19,19 @@
 	<!--Home Page-->
 	<section id="home-page" class="h-screen w-full bg-gradient-to-br from-gray-700 to-green-500 pt-16 flex flex-row">
 		<div class="basis-1/2 flex flex-col gap-y-8 justify-center p-12">
-		<h2 class="text-6xl text-green-100 font-bold uppercase drop-shadow-3xl font-Oswald">Seja bem-vindo</h2>
-		<p class="text-3xl font-bold text-green-100 uppercase -mt-6 font-Oswald">Oque você deseja ver?</p>
-		<!--Opções de sections-->
-		<ul class="bg-gray-400 w-fit rounded-lg shadow-md">
-		<li class="text-xl text-gray-900 cursor-pointer hover:bg-green-600/80 pr-7 pl-4 py-2 hover:rounded-t-lg font-bold duration-500"><a href="#rendimento">Rentabilidade</a> <img src="../public/img/investimentos-logo.png" class="h-6 w-6 inline-block ml-2"></li>
-		<li class="text-xl text-gray-900 cursor-pointer hover:bg-green-600/80 pr-7 pl-4 py-2 hover:rounded-b-lg font-bold duration-500">Cotações <img src="../public/img/cotacoes-logo.png" class="h-6 w-6 inline-block ml-2"></li>
-		</ul>
-	</div>
+			<h2 class="text-6xl text-green-100 font-bold uppercase drop-shadow-3xl font-Oswald">Seja bem-vindo</h2>
+			<p class="text-3xl font-bold text-green-100 uppercase -mt-6 font-Oswald">Oque você deseja ver?</p>
+			<!--Opções de sections-->
+			<ul class="bg-gray-400 w-fit rounded-lg shadow-md">
+			<li class="text-xl text-gray-900 cursor-pointer hover:bg-green-600/80 pr-7 pl-4 py-2 hover:rounded-t-lg font-bold duration-500"><a href="#rendimento">Rentabilidade</a> <img src="../public/img/investimentos-logo.png" class="h-6 w-6 inline-block ml-2"></li>
+			<li class="text-xl text-gray-900 cursor-pointer hover:bg-green-600/80 pr-7 pl-4 py-2 hover:rounded-b-lg font-bold duration-500"><a href="#cotacoes">Cotações</a><img src="../public/img/cotacoes-logo.png" class="h-6 w-6 inline-block ml-2"></li>
+			</ul>
+		</div>
 	<!--Sticker animado-->
-	<img src="../public/img/business-report.png" alt="Animação de um homem segurando gráfico" class="drop-shadow-2xl animate-upDown h-fit">
+	<img src="../public/img/business-report.png" alt="Animação de um homem segurando gráfico" class="drop-shadow-4xl animate-upDown h-fit">
 	</section>
 	<!--Página de cálculo de rentabilidade-->
-	<section id="rendimento" class="h-screen w-full p-16 bg-gradient-to-tr from-emerald-500 to-green-500 flex flex-col items-center justify-center gap-y-10">
+	<section id="rendimento" class="h-screen  w-full p-16 bg-gradient-to-tr from-emerald-500 to-green-500 flex flex-col items-center justify-center gap-y-10">
 		<h2 class="text-5xl uppercase text-white font-Oswald font-bold w-full z-20 drop-shadow-2xl">Aqui você pode ver quanto o seu dinheiro vai render ao longo do tempo...</h2>
 		<!--Campos para calcular-->
 		<div class="flex flex-row bg-green-400/80 pt-6 p-10 rounded-3xl justify-between w-full shadow-xl z-20">
@@ -75,6 +75,97 @@
 			<p class="min-w-8 bg-white rounded-md mt-2 text-white p-2" id="resultado">x</p>
 		</div>
 	</section>
+	<!--Página de cotações de câmbio-->
+	<section id="cotacoes" class="bg-gradient-to-bl from-emerald-500 to-sky-500 h-screen w-full p-16 ">
+			<h2 class="text-5xl uppercase font-bold m-6 text-sky-900">Veja as cotações de diversas moedas</h2>
+			<!--Tabela de conversão e cotações-->
+			<div class="flex flex-row md:gap-0 phone:gap-y-8 h-5/6">
+				<table class="h-full w-3/6 bg-gradient-to-br from-blue-800 to-sky-800 mx-auto rounded-3xl">
+					<thead class="bg-sky-900 rounded-t-3xl">
+						<tr>
+							<th class="rounded-tl-3xl"></th>
+							<th class="uppercase text-2xl text-white p-2">conversão</th>
+							<th class="uppercase text-2xl text-white p-2 rounded-tr-3xl">preço</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/US.png" alt="Bandeira USA" class="h-9 w-9"></th>
+							<th id="dolar-name" class="text-lg uppercase text-white text-left"></th>
+							<th id="dolar-value" class="text-lg uppercase text-white"></th>
+						</tr>
+						<tr>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/EU.png" alt="Bandeira União Europeia " class="h-8 w-8"></th>
+							<th id="euro-name" class="text-lg uppercase text-white text-left"></th>
+							<th id="euro-value" class="text-lg uppercase text-white "></th>
+						</tr>
+						<tr>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/CA.png" alt="Bandeira Canadá" class="h-8 w-8"></th>
+							<th id="dolarCanadense-name" class="text-lg uppercase text-white text-left"></th>
+							<th id="dolarCanadense-value" class="text-lg uppercase text-white"></th>
+						</tr>
+						<tr>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/JP.png" alt="Bandeira Japão" class="h-8 w-8"></th>
+							<th id="iene-name" class="text-lg uppercase text-white text-left"></th>
+							<th id="iene-value" class="text-lg uppercase text-white"></th>
+						</tr>
+						<tr>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/GB.png" alt="Bandeira Reino Unido" class="h-8 w-8"></th>
+							<th id="libra-name" class="text-lg uppercase text-white text-left"></th>
+							<th id="libra-value" class="text-lg uppercase text-white"></th>
+						</tr>
+						<tr>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/AR.png" alt="Bandeira Argentina" class="h-8 w-8"></th>
+							<th id="pesoArgentino-name" class="text-lg uppercase text-white text-left"></th>
+							<th id="pesoArgentino-value" class="text-lg uppercase text-white"></th>
+						</tr>
+					</tbody>
+				</table>
+	
+			<!--Cálculos de conversão-->
+			<div class="inline-block my-auto w-fit bg-sky-900 p-8 rounded-3xl text-center">
+				<h2 class="mb-8 text-white mx-auto text-xl uppercase">Faça a conversão aqui</h2>
+				<div class="mb-8 text-lg mx-auto">
+					<label for="valorReal" class="text-white">R$</label>
+					<input type="number" class="w-32 rounded-md p-2 text-sky-900 font-bold" id="valorReal">
+					<p class="inline-block text-white">para</p>
+					<select id="moedaConverter" name="valorEstrangeiro" id="valorEstrangeiro" class="inline-block w-fit rounded-md p-2 text-sky-900 font-bold">
+						<option value="dolar">Dólar</option>
+						<option value="euro">Euro</option>
+						<option value="dolarCanadense">Dólar Canadense</option>
+						<option value="iene">Iene</option>
+						<option value="libra">Libra</option>
+						<option value="pesoArgentino">Peso Argentino</option>
+					</select>
+				</div>
+				<button id="converterBotao" class="bg-sky-700 p-2 font-bold rounded-md mb-8 hover:bg-sky-800 hover:duration-300 uppercase text-white">converter</button>
+				<p id="resultadoConversao" class="text-white text-lg mx-auto font-bold">R$ <span id="resultadoReal" class="bg-white px-6 py-2 rounded-md mr-2 text-sky-900"></span> é equivalente a<span id="resultadoEstrangeiro" class="bg-white text-sky-900 p-4 px-6 py-2 rounded-md ml-2"></span> </p>
+			</div>
+		</div>
+	</section>
+
+	<!--Rodapé-->
+	<footer class="bg-sky-800 p-4 flex flex-row justify-evenly">
+		<span>&copy;MatheusDrumond2023</span>
+		<ul>
+			<li>Contato: </li>
+			<li><img src="../public/img/linkedin.png" alt="Logo Linkedin" class="h-4 w-4 inline-block mr-2"><a href="https://www.linkedin.com/in/matheus-drumond-4744a222b/" class="hover:underline hover:text-sky-500 hover:duration-300">/matheus-drumond-4744a222b</a></li>
+			<li><img src="../public/img/github (1).png" alt="Logo GitHub" class="h-4 w-4 inline-block mr-2"><a href="https://github.com/matheusDrumond" class="hover:underline hover:text-sky-500 hover:duration-300">/matheusDrumond</a></li>
+			<li><img src="../public/img/email.png" alt="Logo E-mail" class="h-4 w-4 inline-block mr-2"><a href="mailto:drumond.matheusc@gmail.com" class="hover:underline hover:text-sky-500 hover:duration-300">drumond.matheusc@gmail.com</a></li>
+		</ul>
+		<details>
+			<summary class="cursor-pointer">Links dos ícones usados</summary>
+			<p><a href="https://www.flaticon.com/free-icons/money" title="money icons" class="hover:underline hover:text-sky-500 hover:duration-300">Ícone logo</a></p>
+			<p><a href="https://www.flaticon.com/free-icons/money" title="money icons" class="hover:underline hover:text-sky-500 hover:duration-300">Icone rentabilidade</a></p>
+			<p><a href="https://www.flaticon.com/free-icons/money" title="money icons" class="hover:underline hover:text-sky-500 hover:duration-300">Icone cotações</a></p>
+			<p><a href="https://www.flaticon.com/free-stickers/money" title="money stickers" class="hover:underline hover:text-sky-500 hover:duration-300">Sticker Home-page</a></p>
+			<p><a href="https://www.flaticon.com/free-stickers/money" title="money stickers" class="hover:underline hover:text-sky-500 hover:duration-300">Sticker 1 da página de rendimentos</a></p>
+			<p><a href="https://www.flaticon.com/free-stickers/finance" title="finance stickers" class="hover:underline hover:text-sky-500 hover:duration-300">Sticker 2 da página de rendimentos</a></p>
+			<p><a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons" class="hover:underline hover:text-sky-500 hover:duration-300">Linkedin logo</a></p>
+			<p><a href="https://www.flaticon.com/free-icons/github" title="github icons" class="hover:underline hover:text-sky-500 hover:duration-300">GitHub Logo</a></p>
+			<p><a href="https://www.flaticon.com/free-icons/email" title="email icons" class="hover:underline hover:text-sky-500 hover:duration-300">E-mail Logo</a></p>
+		</details>
+	</footer>
     <script src="index.js"></script>
 </body>
 </html>

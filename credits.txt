@@ -3,6 +3,9 @@ Esses créditos serão anexados ao footer da página ao final da produção e an
 ícone logo: <a href="https://www.flaticon.com/free-icons/money" title="money icons">Money icons created by Freepik - Flaticon</a>
 Icone rentabilidade: <a href="https://www.flaticon.com/free-icons/money" title="money icons"></a>
 Icone cotações: <a href="https://www.flaticon.com/free-icons/money" title="money icons"></a>
-Sticker Home-page: <a class="basis-1/2" href="https://www.flaticon.com/free-stickers/money" title="money stickers"></a>
+Sticker Home-page: <a href="https://www.flaticon.com/free-stickers/money" title="money stickers"></a>
 Sticker 1 da página de rendimentos: <a href="https://www.flaticon.com/free-stickers/money" title="money stickers">Money stickers created by Stickers - Flaticon</a>
 Sticker 2 da página de rendimentos: <a href="https://www.flaticon.com/free-stickers/finance" title="finance stickers">Finance stickers created by Stickers - Flaticon</a>
+Linkedin logo: <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by riajulislam - Flaticon</a>
+GitHub Logo: <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by riajulislam - Flaticon</a>
+E-mail Logo: <a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Freepik - Flaticon</a>

@@ -18,6 +18,9 @@ module.exports = {
     },
     fontFamily: {
       'Oswald': ['Oswald', 'sans-serif'] 
+    },
+    screens:{
+      'phone': "320px"
     }
   },
   plugins: [],
