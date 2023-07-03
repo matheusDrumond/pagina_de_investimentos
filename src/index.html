@@ -77,7 +77,7 @@
 	</section>
 	<!--Página de cotações de câmbio-->
 	<section id="cotacoes" class="bg-gradient-to-bl from-emerald-500 to-sky-500 h-screen w-full p-16 ">
-			<h2 class="text-5xl uppercase font-bold m-6 text-sky-900">Veja as cotações de diversas moedas</h2>
+			<h2 class="text-5xl uppercase font-bold m-6 text-sky-900 font-Oswald">Veja as cotações de diversas moedas</h2>
 			<!--Tabela de conversão e cotações-->
 			<div class="flex flex-row md:gap-0 phone:gap-y-8 h-5/6">
 				<table class="h-full w-3/6 bg-gradient-to-br from-blue-800 to-sky-800 mx-auto rounded-3xl">
@@ -126,9 +126,10 @@
 			<div class="inline-block my-auto w-fit bg-sky-900 p-8 rounded-3xl text-center">
 				<h2 class="mb-8 text-white mx-auto text-xl uppercase">Faça a conversão aqui</h2>
 				<div class="mb-8 text-lg mx-auto">
-					<label for="valorReal" class="text-white">R$</label>
+					<button class="inline-block my-auto inactive" id="botaoInverter"><img src="../public/img/exchange.png" alt="Sinal de inversão" class="h-8 w-8 bg-sky-700 hover:bg-sky-800 p-1 mr-2 rounded-md hover:duration-300"></button>
+					<label for="valorReal" class="text-white" id="rs-inicial">R$</label>
 					<input type="number" class="w-32 rounded-md p-2 text-sky-900 font-bold" id="valorReal">
-					<p class="inline-block text-white">para</p>
+					<p class="inline-block text-white" id=para>para</p>
 					<select id="moedaConverter" name="valorEstrangeiro" id="valorEstrangeiro" class="inline-block w-fit rounded-md p-2 text-sky-900 font-bold">
 						<option value="dolar">Dólar</option>
 						<option value="euro">Euro</option>
@@ -137,9 +138,10 @@
 						<option value="libra">Libra</option>
 						<option value="pesoArgentino">Peso Argentino</option>
 					</select>
+					<p id="paraReal" class="inline-block text-white hidden">p/ Real (BRL)</p>
 				</div>
 				<button id="converterBotao" class="bg-sky-700 p-2 font-bold rounded-md mb-8 hover:bg-sky-800 hover:duration-300 uppercase text-white">converter</button>
-				<p id="resultadoConversao" class="text-white text-lg mx-auto font-bold">R$ <span id="resultadoReal" class="bg-white px-6 py-2 rounded-md mr-2 text-sky-900"></span> é equivalente a<span id="resultadoEstrangeiro" class="bg-white text-sky-900 p-4 px-6 py-2 rounded-md ml-2"></span> </p>
+				<p id="resultadoConversao" class="text-white text-lg mx-auto font-bold"><span id="realConverter">R$</span> <span id="resultadoReal" class="bg-white px-6 py-2 rounded-md mr-2 text-sky-900"></span> é equivalente a<span id="resultadoEstrangeiro" class="bg-white text-sky-900 p-4 px-6 py-2 rounded-md ml-2"></span><span id="realInverter" class="hidden"> R$</span> </p>
 			</div>
 		</div>
 	</section>
@@ -164,6 +166,7 @@
 			<p><a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons" class="hover:underline hover:text-sky-500 hover:duration-300">Linkedin logo</a></p>
 			<p><a href="https://www.flaticon.com/free-icons/github" title="github icons" class="hover:underline hover:text-sky-500 hover:duration-300">GitHub Logo</a></p>
 			<p><a href="https://www.flaticon.com/free-icons/email" title="email icons" class="hover:underline hover:text-sky-500 hover:duration-300">E-mail Logo</a></p>
+			<p><a href="https://www.flaticon.com/free-icons/change" title="change icons" class="hover:underline hover:text-sky-500 hover:duration-300">Ícone reverse</a></p>
 		</details>
 	</footer>
     <script src="index.js"></script>

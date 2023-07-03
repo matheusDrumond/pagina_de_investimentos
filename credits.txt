@@ -9,3 +9,4 @@ Sticker 2 da página de rendimentos: <a href="https://www.flaticon.com/free-stic
 Linkedin logo: <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by riajulislam - Flaticon</a>
 GitHub Logo: <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by riajulislam - Flaticon</a>
 E-mail Logo: <a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Freepik - Flaticon</a>
+Ícone reverse: <a href="https://www.flaticon.com/free-icons/change" title="change icons">Change icons created by Smartline - Flaticon</a>

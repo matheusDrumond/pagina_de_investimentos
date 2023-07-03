@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Página de cotações 
+// Página de cotações
 
 // Link da API
 const url = 'https://economia.awesomeapi.com.br/json/last/'
@@ -200,7 +200,8 @@ async function getValues(){
   let namePesoArgentino = data.ARSBRL.name;
   pesoArgentinoName.innerHTML = namePesoArgentino;
 
-  // Cálculo de conversão
+  // Cálculos de conversão
+  // Real p/ moeda estrangeira
   function converter(valorReal, coin, coinName){
     let result = (valorReal / coin).toFixed(2);
 
@@ -210,47 +211,145 @@ async function getValues(){
     let resultadoEstrangeiro = document.querySelector('#resultadoEstrangeiro');
     resultadoEstrangeiro.innerHTML = `${result} ${coinName}`
 
-    console.log(a, result)
+  }
+  // Moeda estrangeira p/ real
+  function converterInverso(valorEstrangeiro, cotacao, coinName){
+    let result = (valorEstrangeiro * cotacao).toFixed(2);
+
+    // Alterar a forma de mostrar o resultado
+    let realInverter = document.querySelector('#realInverter');
+    realInverter.classList.remove('hidden');
+
+    let resultadoReal = document.querySelector('#resultadoReal');
+    resultadoReal.innerHTML = `${valorEstrangeiro} ${coinName}`;
+
+    let resultadoEstrangeiro = document.querySelector('#resultadoEstrangeiro');
+    resultadoEstrangeiro.innerHTML = result
+
   }
 
+  let botaoInverter = document.querySelector('#botaoInverter');
   let converterBotao = document.querySelector('#converterBotao');
 
-  converterBotao.addEventListener('click', function(){
 
-    // Dólar
-    if(document.querySelector('#moedaConverter').value === 'dolar'){
-      let valorReal = document.querySelector('#valorReal').value ;
-      converter(valorReal, valueDolar, data.USDBRL.code);
-    }
-    // Euro
-    else if(document.querySelector('#moedaConverter').value === 'euro'){
-      let valorReal = document.querySelector('#valorReal').value ;
-      converter(valorReal, valueEuro, data.EURBRL.code);
-  }
-  // Dólar Canadense
-  else if(document.querySelector('#moedaConverter').value === 'dolarCanadense'){
-    let valorReal = document.querySelector('#valorReal').value ;
-    converter(valorReal, valueDolarCanadense, data.CADBRL.code);
-  }
-  // Iene
-  else if(document.querySelector('#moedaConverter').value === 'iene'){
-    let valorReal = document.querySelector('#valorReal').value ;
-    converter(valorReal, valueIene, data.JPYBRL.code);
-  }
-  // Libra
-  else if(document.querySelector('#moedaConverter').value === 'libra'){
-    let valorReal = document.querySelector('#valorReal').value ;
-    converter(valorReal, valueLibra, data.GBPBRL.code);
-  }
-  // Pesos Argentinos
-  else if(document.querySelector('#moedaConverter').value === 'pesoArgentino'){
-    let valorReal = document.querySelector('#valorReal').value ;
-    converter(valorReal, valuePesoArgentino, data.ARSBRL.code);
-  }
-  })
+  // Controle de layouts da div de conversão
+  botaoInverter.addEventListener('click', function() {
+
+    // Layout padrão
+    if (botaoInverter.classList.contains('inactive')) {
+      botaoInverter.classList.replace('inactive', 'active');
+      // Alterar os inputs
+      let pPara = document.querySelector('#para');
+      pPara.classList.add('hidden');
   
+      let paraReal = document.querySelector('#paraReal');
+      paraReal.classList.remove('hidden');
+  
+      let realConverter = document.querySelector('#realConverter');
+      realConverter.classList.add('hidden');
 
-  console.log(data);
+      let realInverter = document.querySelector('#realInverter');
+      realInverter.classList.remove('hidden');
+
+      let rsInicial = document.querySelector('#rs-inicial');
+      rsInicial.classList.add('hidden');
+
+    } 
+    // Layout Invertido
+    else if (botaoInverter.classList.contains('active')) {
+      botaoInverter.classList.replace('active', 'inactive');
+      // Alterar os inputs
+      let pPara = document.querySelector('#para');
+      pPara.classList.remove('hidden');
+  
+      let paraReal = document.querySelector('#paraReal');
+      paraReal.classList.add('hidden');
+  
+      let realConverter = document.querySelector('#realConverter');
+      realConverter.classList.remove('hidden');
+
+      let realInverter = document.querySelector('#realInverter');
+      realInverter.classList.add('hidden');
+
+      let rsInicial = document.querySelector('#rs-inicial');
+      rsInicial.classList.remove('hidden');
+
+    }
+  });
+  
+  // Conversão padrão
+
+    converterBotao.addEventListener('click', function conversao(){
+      if(botaoInverter.classList.contains('inactive')){
+      // Dólar
+      if (document.querySelector('#moedaConverter').value === 'dolar') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converter(valorReal, valueDolar, data.USDBRL.code);
+      }
+      // Euro
+      else if (document.querySelector('#moedaConverter').value === 'euro') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converter(valorReal, valueEuro, data.EURBRL.code);
+      }
+      // Dólar Canadense
+      else if (document.querySelector('#moedaConverter').value === 'dolarCanadense') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converter(valorReal, valueDolarCanadense, data.CADBRL.code);
+      }
+      // Iene
+      else if (document.querySelector('#moedaConverter').value === 'iene') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converter(valorReal, valueIene, data.JPYBRL.code);
+      }
+      // Libra
+      else if (document.querySelector('#moedaConverter').value === 'libra') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converter(valorReal, valueLibra, data.GBPBRL.code);
+      }
+      // Pesos Argentinos
+      else if (document.querySelector('#moedaConverter').value === 'pesoArgentino') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converter(valorReal, valuePesoArgentino, data.ARSBRL.code);
+      }
+    }
+    // Função de conversão inversa
+    else if(botaoInverter.classList.contains('active')){
+      if (document.querySelector('#moedaConverter').value === 'dolar') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converterInverso(valorReal, valueDolar, data.USDBRL.code);
+      }
+      // Euro
+      else if (document.querySelector('#moedaConverter').value === 'euro') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converterInverso(valorReal, valueEuro, data.EURBRL.code);
+      }
+      // Dólar Canadense
+      else if (document.querySelector('#moedaConverter').value === 'dolarCanadense') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converterInverso(valorReal, valueDolarCanadense, data.CADBRL.code);
+      }
+      // Iene
+      else if (document.querySelector('#moedaConverter').value === 'iene') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converterInverso(valorReal, valueIene, data.JPYBRL.code);
+      }
+      // Libra
+      else if (document.querySelector('#moedaConverter').value === 'libra') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converterInverso(valorReal, valueLibra, data.GBPBRL.code);
+      }
+      // Pesos Argentinos
+      else if (document.querySelector('#moedaConverter').value === 'pesoArgentino') {
+        let valorReal = document.querySelector('#valorReal').value;
+        converterInverso(valorReal, valuePesoArgentino, data.ARSBRL.code);
+      }
+    }
+    });
+
+
+
+
+  
 };
 
 document.addEventListener('DOMContentLoaded', getValues());
