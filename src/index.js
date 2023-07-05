@@ -13,9 +13,13 @@ function jurosSimples(valor, taxa, tempo) {
     resultado.classList.replace('text-white', 'text-green-500');
   }
 
-function jurosCompostos(valor, taxa, time){
-    let juros = (valor * Math.pow(1 + (taxa / 100), time) - valor).toFixed(2);
-    let montante = (parseFloat(valor) + parseFloat(juros)).toFixed(2);
+  function jurosCompostos(valor, aporte, taxa, time){
+    // Aportes 
+    let aportes = aporte * (Math.pow((1 + (taxa / 100)), time) - 1) / (taxa / 100);
+    let jurosAPortes = aportes - (aporte * time);
+    // VP
+    let juros = ((valor * Math.pow(1 + (taxa / 100), time) - valor) + jurosAPortes).toFixed(2);
+    let montante = ((parseFloat(valor) + parseFloat(juros)) + aportes).toFixed(2);
     let mensagem = `O total de juros foi ${juros} e o montante final é ${montante}`;
   
     let resultado = document.querySelector('#resultado');
@@ -86,9 +90,10 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('#time-type').value === 'month'
     ){
       let valor = document.querySelector('#valorInicial').value;
+      let aporte = document.querySelector('#aportes').value;
       let taxa = document.querySelector('#juros').value;
       let tempo = document.querySelector('#time').value;
-      jurosCompostos(valor, taxa, tempo)
+      jurosCompostos(valor, aporte, taxa, tempo)
     }
     // Tudo por ano
     else if(
@@ -351,7 +356,3 @@ async function getValues(){
 
   
 };
-
-document.addEventListener('DOMContentLoaded', getValues());
-
-
