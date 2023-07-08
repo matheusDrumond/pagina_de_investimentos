@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let valor = document.querySelector('#valorInicial').value;
       let tempo = document.querySelector('#time').value * 12;
       let aporte = document.querySelector('#aportes').value;
-      let taxa = document.querySelector('#juros').value / 12;
+      let taxa = ((((document.querySelector('#juros').value  / 100) + 1) ** (1 / 12)) - 1) * 100;
       jurosCompostos(valor, aporte, taxa, tempo);
     }
     // Juros por mês e tempo em anos
@@ -113,9 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('#time-type').value === 'year'
     ){
       let valor = document.querySelector('#valorInicial').value;
-      let taxa = document.querySelector('#juros').value * 12;
-      let tempo = document.querySelector('#time').value;
-      jurosSimples(valor, taxa, tempo);
+      let taxa = document.querySelector('#juros').value;
+      let tempo = document.querySelector('#time').value * 12;
+      let aporte = document.querySelector('#aportes').value;
+      jurosCompostos(valor, aporte, taxa, tempo);
     }
     // Juros por ano e tempo em meses
     else if(
@@ -124,9 +125,10 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('#time-type').value === 'month'
     ){
       let valor = document.querySelector('#valorInicial').value;
-      let taxa = document.querySelector('#juros').value;
-      let tempo = document.querySelector('#time').value / 12;
-      jurosSimples(valor, taxa, tempo);
+      let taxa = ((((document.querySelector('#juros').value  / 100) + 1) ** (1 / 12)) - 1) * 100;
+      let tempo = document.querySelector('#time').value;
+      let aporte = document.querySelector('#aportes').value;
+      jurosCompostos(valor, aporte, taxa, tempo);
     }
   });
 });
