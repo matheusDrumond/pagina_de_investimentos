@@ -1036,6 +1036,11 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.drop-shadow-3xl {
+  --tw-drop-shadow: drop-shadow(0 35px 35px rgba(0, 0, 0, 0.6));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .backdrop-blur-md {
   --tw-backdrop-blur: blur(12px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -1103,7 +1108,121 @@ video {
 }
 
 @media (min-width: 320px) {
+  .phone\:fixed {
+    position: fixed;
+  }
+
+  .phone\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .phone\:flex {
+    display: flex;
+  }
+
+  .phone\:hidden {
+    display: none;
+  }
+
+  .phone\:h-fit {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
+  .phone\:w-full {
+    width: 100%;
+  }
+
+  .phone\:w-fit {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .phone\:basis-full {
+    flex-basis: 100%;
+  }
+
+  .phone\:flex-col {
+    flex-direction: column;
+  }
+
+  .phone\:justify-between {
+    justify-content: space-between;
+  }
+
   .phone\:gap-y-8 {
     row-gap: 2rem;
+  }
+
+  .phone\:gap-y-6 {
+    row-gap: 1.5rem;
+  }
+
+  .phone\:gap-y-4 {
+    row-gap: 1rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:fixed {
+    position: fixed;
+  }
+
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:inline-block {
+    display: inline-block;
+  }
+
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:h-screen {
+    height: 100vh;
+  }
+
+  .sm\:h-full {
+    height: 100%;
+  }
+
+  .sm\:w-3\/6 {
+    width: 50%;
+  }
+
+  .sm\:basis-1\/2 {
+    flex-basis: 50%;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:gap-0 {
+    gap: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:gap-0 {
+    gap: 0px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex {
+    display: flex;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:flex {
+    display: flex;
   }
 }

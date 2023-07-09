@@ -8,8 +8,8 @@
 </head>
 <body class="h-screen w-full">
 	<!--Barra de navegação-->
-    <nav class="flex flex-row p-5 fixed h-16 w-full bg-gray-700/40 backdrop-blur-md items-center shadow-lg z-50">
-		<span class="text-2xl leading-5 uppercase font-bold text-white">Invest <img src="../public/img/logo.png" class="h-6 w-6 ml-2 mb-1 inline-block"></span>
+    <nav class="flex flex-row p-5 sm:fixed phone:fixed h-16 w-full bg-gray-700/40 backdrop-blur-md items-center shadow-lg z-50">
+		<span class="text-2xl leading-5 uppercase font-bold text-white">Invest <img src="../public/img/logo.png" class="h-6 w-6 ml-2 mb-1 sm:inline-block phone:hidden"></span>
 		<ul class="flex flex-row gap-x-5 ml-auto">
 			<li class="text-lg text-white leading-4 uppercase font-bold cursor-pointer hover:text-green-500 hover:duration-500"><a href="#home-page">home</a></li class="text-lg leading-5 uppercase">
 			<li class="text-lg text-white leading-4 uppercase font-bold cursor-pointer hover:text-green-500 hover:duration-500"><a href="#rendimento">Rendimentos</a></li class="text-lg leading-5 uppercase">
@@ -17,8 +17,8 @@
 		</ul>
     </nav>
 	<!--Home Page-->
-	<section id="home-page" class="h-screen w-full bg-gradient-to-br from-gray-700 to-green-500 pt-16 flex flex-row">
-		<div class="basis-1/2 flex flex-col gap-y-8 justify-center p-12">
+	<section id="home-page" class="h-screen w-full bg-gradient-to-br from-gray-700 to-green-500 pt-16 flex flex-row phone:justify-between">
+		<div class="sm:basis-1/2 phone:basis-full flex flex-col gap-y-8 justify-center p-12">
 			<h2 class="text-6xl text-green-100 font-bold uppercase drop-shadow-3xl font-Oswald">Seja bem-vindo</h2>
 			<p class="text-3xl font-bold text-green-100 uppercase -mt-6 font-Oswald">Oque você deseja ver?</p>
 			<!--Opções de sections-->
@@ -28,13 +28,13 @@
 			</ul>
 		</div>
 	<!--Sticker animado-->
-	<img src="../public/img/business-report.png" alt="Animação de um homem segurando gráfico" class="drop-shadow-4xl animate-upDown h-fit">
+	<img src="../public/img/business-report.png" alt="Animação de um homem segurando gráfico" class="drop-shadow-4xl animate-upDown h-fit xl:flex lg:flex md:flex sm:flex phone:hidden">
 	</section>
 	<!--Página de cálculo de rentabilidade-->
-	<section id="rendimento" class="h-screen  w-full p-16 bg-gradient-to-tr from-emerald-500 to-green-500 flex flex-col items-center justify-center gap-y-10">
+	<section id="rendimento" class="sm:h-screen phone:h-fit w-full p-16 bg-gradient-to-tr from-emerald-500 to-green-500 flex flex-col items-center justify-center gap-y-10">
 		<h2 class="text-5xl uppercase text-white font-Oswald font-bold w-full z-20 drop-shadow-2xl">Aqui você pode ver quanto o seu dinheiro vai render ao longo do tempo...</h2>
 		<!--Campos para calcular-->
-		<div class="flex flex-row bg-green-400/80 pt-6 p-10 rounded-3xl justify-between w-full shadow-xl z-20">
+		<div class="flex sm:flex-row phone:flex-col sm:gap-0 phone:gap-y-8 bg-green-400/80 pt-6 p-10 rounded-3xl justify-between w-full shadow-xl z-20">
 			<div>
 				<label for="valorInicial" class="text-white text-lg block">Valor inicial</label>
 				<p class="inline-block text-base text-white mr-2">R$</p><input type="number" id="valorInicial" name="valorInicial" class="rounded-md mt-2 w-32" value="" required>
@@ -80,11 +80,11 @@
 		</div>
 	</section>
 	<!--Página de cotações de câmbio-->
-	<section id="cotacoes" class="bg-gradient-to-bl from-emerald-500 to-sky-500 h-screen w-full p-16 ">
+	<section id="cotacoes" class="bg-gradient-to-bl from-emerald-500 to-sky-500 sm:h-screen phone:h-fit w-full p-16 ">
 			<h2 class="text-5xl uppercase font-bold m-6 text-sky-900 font-Oswald">Veja as cotações de diversas moedas</h2>
 			<!--Tabela de conversão e cotações-->
-			<div class="flex flex-row md:gap-0 phone:gap-y-8 h-5/6">
-				<table class="h-full w-3/6 bg-gradient-to-br from-blue-800 to-sky-800 mx-auto rounded-3xl">
+			<div class="flex sm:flex-row sm:gap-0 phone:flex-col phone:gap-y-8 h-5/6">
+				<table class="sm:h-full phone:h-fit sm:w-3/6 phone:w-full bg-gradient-to-br from-blue-800 to-sky-800 mx-auto rounded-3xl">
 					<thead class="bg-sky-900 rounded-t-3xl">
 						<tr>
 							<th class="rounded-tl-3xl"></th>
@@ -94,32 +94,32 @@
 					</thead>
 					<tbody>
 						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/US.png" alt="Bandeira USA" class="h-9 w-9"></th>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/US.png" alt="Bandeira USA" class="h-8 w-8 sm:block phone:hidden"></th>
 							<th id="dolar-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="dolar-value" class="text-lg uppercase text-white"></th>
 						</tr>
 						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/EU.png" alt="Bandeira União Europeia " class="h-8 w-8"></th>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/EU.png" alt="Bandeira União Europeia " class="h-8 w-8 sm:block phone:hidden"></th>
 							<th id="euro-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="euro-value" class="text-lg uppercase text-white "></th>
 						</tr>
 						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/CA.png" alt="Bandeira Canadá" class="h-8 w-8"></th>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/CA.png" alt="Bandeira Canadá" class="h-8 w-8 sm:block phone:hidden"></th>
 							<th id="dolarCanadense-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="dolarCanadense-value" class="text-lg uppercase text-white"></th>
 						</tr>
 						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/JP.png" alt="Bandeira Japão" class="h-8 w-8"></th>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/JP.png" alt="Bandeira Japão" class="h-8 w-8 sm:block phone:hidden"></th>
 							<th id="iene-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="iene-value" class="text-lg uppercase text-white"></th>
 						</tr>
 						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/GB.png" alt="Bandeira Reino Unido" class="h-8 w-8"></th>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/GB.png" alt="Bandeira Reino Unido" class="h-8 w-8 sm:block phone:hidden"></th>
 							<th id="libra-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="libra-value" class="text-lg uppercase text-white"></th>
 						</tr>
 						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/AR.png" alt="Bandeira Argentina" class="h-8 w-8"></th>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/AR.png" alt="Bandeira Argentina" class="h-8 w-8 sm:block phone:hidden"></th>
 							<th id="pesoArgentino-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="pesoArgentino-value" class="text-lg uppercase text-white"></th>
 						</tr>
@@ -127,12 +127,12 @@
 				</table>
 	
 			<!--Cálculos de conversão-->
-			<div class="inline-block my-auto w-fit bg-sky-900 p-8 rounded-3xl text-center">
+			<div class="sm:inline-block my-auto w-fit bg-sky-900 p-8 rounded-3xl text-center phone:flex phone:flex-col phone:gap-y-4">
 				<h2 class="mb-8 text-white mx-auto text-xl uppercase">Faça a conversão aqui</h2>
-				<div class="mb-8 text-lg mx-auto">
+				<div class="mb-8 text-lg mx-auto ">
 					<button class="inline-block my-auto inactive" id="botaoInverter"><img src="../public/img/exchange.png" alt="Sinal de inversão" class="h-8 w-8 bg-sky-700 hover:bg-sky-800 p-1 mr-2 rounded-md hover:duration-300"></button>
 					<label for="valorReal" class="text-white" id="rs-inicial">R$</label>
-					<input type="number" class="w-32 rounded-md p-2 text-sky-900 font-bold" id="valorReal">
+					<input type="number" class="w-32 rounded-md p-2 text-sky-900 font-bold sm:m-0 phone:mb-4" id="valorReal">
 					<p class="inline-block text-white" id=para>para</p>
 					<select id="moedaConverter" name="valorEstrangeiro" id="valorEstrangeiro" class="inline-block w-fit rounded-md p-2 text-sky-900 font-bold">
 						<option value="dolar">Dólar</option>
@@ -151,7 +151,7 @@
 	</section>
 
 	<!--Rodapé-->
-	<footer class="bg-sky-800 p-4 flex flex-row justify-evenly">
+	<footer class="bg-sky-800 p-4 flex sm:flex-row phone:flex-col justify-evenly">
 		<span>&copy;MatheusDrumond2023</span>
 		<ul>
 			<li>Contato: </li>
