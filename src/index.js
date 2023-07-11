@@ -20,7 +20,11 @@ function jurosSimples(valor, taxa, tempo) {
     // VP
     let juros = ((valor * Math.pow(1 + (taxa / 100), tempo) - valor) + jurosAPortes).toFixed(2);
     let montante = ((parseFloat(valor) + parseFloat(juros)) + aportes - jurosAPortes).toFixed(2);
-    let mensagem = `O total de juros foi ${juros} e o montante final é ${montante}`;
+    let totalInvestido = ((aporte * tempo) + parseFloat(valor)).toFixed(2);
+    let mensagem = 
+      `O total investido foi ${(parseFloat(totalInvestido)).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}
+      o total de juros foi ${(parseFloat(juros)).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} 
+      e o montante final é ${(parseFloat(montante)).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`;
   
     let resultado = document.querySelector('#resultado');
     resultado.innerHTML = mensagem;
@@ -31,6 +35,7 @@ function jurosSimples(valor, taxa, tempo) {
 
 // Espera do DOM carregar o conteúdo
 document.addEventListener('DOMContentLoaded', function() {
+
   let botaoCalcular = document.querySelector('#calcular');
 
   botaoCalcular.addEventListener('click', function() {
@@ -129,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let tempo = document.querySelector('#time').value;
       let aporte = document.querySelector('#aportes').value;
       jurosCompostos(valor, aporte, taxa, tempo);
-    }
+    };
   });
 });
 
@@ -178,32 +183,32 @@ async function getValues(){
 
   // Dólar Americano
   let valueDolar = data.USDBRL.bid;
-  valorDolar.innerHTML = 'R$ ' + valueDolar;
+  valorDolar.innerHTML = 'R$ ' + parseFloat(valueDolar).toFixed(3);
   let nameDolar = data.USDBRL.name;
   dolarName.innerHTML = nameDolar;
   // Euro
   let valueEuro = data.EURBRL.bid;
-  valorEuro.innerHTML = 'R$ ' + valueEuro;
+  valorEuro.innerHTML = 'R$ ' + parseFloat(valueEuro).toFixed(3);
   let nameEuro = data.EURBRL.name;
   euroName.innerHTML = nameEuro;
   // Dólar Canadense
   let valueDolarCanadense = data.CADBRL.bid;
-  valorDolarCanadense.innerHTML = 'R$ ' + valueDolarCanadense;
+  valorDolarCanadense.innerHTML = 'R$ ' + parseFloat(valueDolarCanadense).toFixed(3);
   let nameDolarCanadense = data.CADBRL.name;
   dolarCanadenseName.innerHTML = nameDolarCanadense;
   // Iene
   let valueIene = data.JPYBRL.bid;
-  valorIene.innerHTML = 'R$ ' + valueIene;
+  valorIene.innerHTML = 'R$ ' + parseFloat(valueIene).toFixed(3);
   let nameIene = data.JPYBRL.name;
   ieneName.innerHTML = nameIene;
   // Libra
   let valueLibra = data.GBPBRL.bid;
-  valorLibra.innerHTML = 'R$ ' + valueLibra;
+  valorLibra.innerHTML = 'R$ ' + parseFloat(valueLibra).toFixed(3);
   let nameLibra = data.GBPBRL.name;
   libraName.innerHTML = nameLibra;
   // Pesos Argentinos
   let valuePesoArgentino = data.ARSBRL.bid;
-  valorPesoArgentino.innerHTML = 'R$ ' + valuePesoArgentino;
+  valorPesoArgentino.innerHTML = 'R$ ' + parseFloat(valuePesoArgentino).toFixed(3);
   let namePesoArgentino = data.ARSBRL.name;
   pesoArgentinoName.innerHTML = namePesoArgentino;
 
@@ -352,9 +357,7 @@ async function getValues(){
       }
     }
     });
-
-
-
-
   
 };
+
+getValues();

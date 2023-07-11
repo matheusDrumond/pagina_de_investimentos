@@ -625,25 +625,17 @@ video {
   height: 2rem;
 }
 
-.h-9 {
-  height: 2.25rem;
-}
-
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
-}
-
-.h-full {
-  height: 100%;
 }
 
 .h-screen {
   height: 100vh;
 }
 
-.w-3\/6 {
-  width: 50%;
+.h-full {
+  height: 100%;
 }
 
 .w-32 {
@@ -662,10 +654,6 @@ video {
   width: 2rem;
 }
 
-.w-9 {
-  width: 2.25rem;
-}
-
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -673,10 +661,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.basis-1\/2 {
-  flex-basis: 50%;
 }
 
 @keyframes upDown {
@@ -776,6 +760,14 @@ video {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
 }
 
 .border-transparent {
@@ -904,6 +896,16 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .pl-4 {
   padding-left: 1rem;
 }
@@ -970,6 +972,11 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-bold {
@@ -1112,8 +1119,24 @@ video {
     position: fixed;
   }
 
+  .phone\:mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
   .phone\:mb-4 {
     margin-bottom: 1rem;
+  }
+
+  .phone\:mt-4 {
+    margin-top: 1rem;
+  }
+
+  .phone\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .phone\:block {
+    display: block;
   }
 
   .phone\:flex {
@@ -1129,13 +1152,12 @@ video {
     height: fit-content;
   }
 
-  .phone\:w-full {
-    width: 100%;
+  .phone\:h-full {
+    height: 100%;
   }
 
-  .phone\:w-fit {
-    width: -moz-fit-content;
-    width: fit-content;
+  .phone\:w-full {
+    width: 100%;
   }
 
   .phone\:basis-full {
@@ -1150,22 +1172,50 @@ video {
     justify-content: space-between;
   }
 
+  .phone\:gap-y-4 {
+    row-gap: 1rem;
+  }
+
   .phone\:gap-y-8 {
     row-gap: 2rem;
   }
 
-  .phone\:gap-y-6 {
-    row-gap: 1.5rem;
+  .phone\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
-  .phone\:gap-y-4 {
-    row-gap: 1rem;
+  .phone\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .phone\:pb-4 {
+    padding-bottom: 1rem;
+  }
+
+  .phone\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .phone\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:fixed {
     position: fixed;
+  }
+
+  .sm\:m-0 {
+    margin: 0px;
+  }
+
+  .sm\:mt-0 {
+    margin-top: 0px;
   }
 
   .sm\:block {
@@ -1176,16 +1226,24 @@ video {
     display: inline-block;
   }
 
+  .sm\:inline {
+    display: inline;
+  }
+
   .sm\:flex {
     display: flex;
   }
 
-  .sm\:h-screen {
-    height: 100vh;
+  .sm\:hidden {
+    display: none;
   }
 
   .sm\:h-full {
     height: 100%;
+  }
+
+  .sm\:h-screen {
+    height: 100vh;
   }
 
   .sm\:w-3\/6 {
@@ -1203,21 +1261,69 @@ video {
   .sm\:gap-0 {
     gap: 0px;
   }
+
+  .sm\:p-0 {
+    padding: 0px;
+  }
+
+  .sm\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .sm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 768px) {
+  .md\:block {
+    display: block;
+  }
+
   .md\:flex {
     display: flex;
   }
 
-  .md\:gap-0 {
-    gap: 0px;
+  .md\:h-screen {
+    height: 100vh;
+  }
+
+  .md\:h-full {
+    height: 100%;
+  }
+
+  .md\:w-3\/6 {
+    width: 50%;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 }
 
 @media (min-width: 1024px) {
+  .lg\:block {
+    display: block;
+  }
+
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:h-full {
+    height: 100%;
   }
 }
 

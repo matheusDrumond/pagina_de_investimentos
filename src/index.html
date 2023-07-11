@@ -8,12 +8,12 @@
 </head>
 <body class="h-screen w-full">
 	<!--Barra de navegação-->
-    <nav class="flex flex-row p-5 sm:fixed phone:fixed h-16 w-full bg-gray-700/40 backdrop-blur-md items-center shadow-lg z-50">
+    <nav class="flex flex-row p-5 fixed h-16 w-full bg-gray-700/40 backdrop-blur-md items-center shadow-lg z-50">
 		<span class="text-2xl leading-5 uppercase font-bold text-white">Invest <img src="../public/img/logo.png" class="h-6 w-6 ml-2 mb-1 sm:inline-block phone:hidden"></span>
 		<ul class="flex flex-row gap-x-5 ml-auto">
-			<li class="text-lg text-white leading-4 uppercase font-bold cursor-pointer hover:text-green-500 hover:duration-500"><a href="#home-page">home</a></li class="text-lg leading-5 uppercase">
-			<li class="text-lg text-white leading-4 uppercase font-bold cursor-pointer hover:text-green-500 hover:duration-500"><a href="#rendimento">Rendimentos</a></li class="text-lg leading-5 uppercase">
-			<li class="text-lg text-white leading-4 uppercase font-bold cursor-pointer hover:text-green-500 hover:duration-500"><a href="#cotacoes">Câmbios</a></li class="text-lg leading-5 uppercase">
+			<li class="sm:text-lg phone:text-md text-white leading-4 uppercase font-bold cursor-pointer hover:text-green-500 hover:duration-500"><a href="#home-page">home</a></li class="text-lg leading-5 uppercase">
+			<li class="sm:text-lg phone:text-md text-white leading-4 uppercase font-bold cursor-pointer hover:text-green-500 hover:duration-500"><a href="#rendimento">Rendimentos</a></li class="text-lg leading-5 uppercase">
+			<li class="sm:text-lg phone:text-md text-white leading-4 uppercase font-bold cursor-pointer hover:text-green-500 hover:duration-500"><a href="#cotacoes">Câmbios</a></li class="text-lg leading-5 uppercase">
 		</ul>
     </nav>
 	<!--Home Page-->
@@ -28,22 +28,21 @@
 			</ul>
 		</div>
 	<!--Sticker animado-->
-	<img src="../public/img/business-report.png" alt="Animação de um homem segurando gráfico" class="drop-shadow-4xl animate-upDown h-fit xl:flex lg:flex md:flex sm:flex phone:hidden">
+	<img src="../public/img/business-report.png" alt="Animação de um homem segurando gráfico" class="drop-shadow-4xl animate-upDown h-fit lg:flex md:flex sm:hidden phone:hidden">
 	</section>
 	<!--Página de cálculo de rentabilidade-->
-	<section id="rendimento" class="sm:h-screen phone:h-fit w-full p-16 bg-gradient-to-tr from-emerald-500 to-green-500 flex flex-col items-center justify-center gap-y-10">
-		<h2 class="text-5xl uppercase text-white font-Oswald font-bold w-full z-20 drop-shadow-2xl">Aqui você pode ver quanto o seu dinheiro vai render ao longo do tempo...</h2>
+	<section id="rendimento" class="md:h-screen phone:h-fit w-full p-16 bg-gradient-to-tr from-emerald-500 to-green-500 flex flex-col items-center justify-center gap-y-10">
+		<h2 class="sm:text-5xl phone:text-4xl uppercase text-white font-Oswald font-bold w-full z-20 drop-shadow-2xl">Aqui você pode ver quanto o seu dinheiro vai render ao longo do tempo...</h2>
 		<!--Campos para calcular-->
-		<div class="flex sm:flex-row phone:flex-col sm:gap-0 phone:gap-y-8 bg-green-400/80 pt-6 p-10 rounded-3xl justify-between w-full shadow-xl z-20">
+		<div class="flex md:flex-row phone:flex-col sm:gap-0 phone:gap-y-8 bg-green-400/80 pt-6 p-10 rounded-3xl justify-between w-full shadow-xl z-20">
 			<div>
 				<label for="valorInicial" class="text-white text-lg block">Valor inicial</label>
 				<p class="inline-block text-base text-white mr-2">R$</p><input type="number" id="valorInicial" name="valorInicial" class="rounded-md mt-2 w-32" value="" required>
 			</div>
-			<div>
+			<div id="div-aportes">
 				<label for="aportes" class="text-white text-lg block">Aportes mensais</label> 
 				<p class="inline-block text-base text-white mr-2">R$</p><input type="number" id="aportes" class="rounded-md mt-2  w-32" required value="">
 			</div>
-
 			<div>
 				<label for="juros" class="text-white text-lg block">Taxa de juros</label>
 				<input type="number" id="juros" class="rounded-md mt-2   w-32" required value=""><p class="inline-block text-base text-white mx-2">%</p>
@@ -80,11 +79,11 @@
 		</div>
 	</section>
 	<!--Página de cotações de câmbio-->
-	<section id="cotacoes" class="bg-gradient-to-bl from-emerald-500 to-sky-500 sm:h-screen phone:h-fit w-full p-16 ">
-			<h2 class="text-5xl uppercase font-bold m-6 text-sky-900 font-Oswald">Veja as cotações de diversas moedas</h2>
+	<section id="cotacoes" class="bg-gradient-to-bl from-emerald-500 to-sky-500 md:h-screen phone:h-fit w-full p-16 ">
+			<h2 class="sm:text-5xl phone:text-4xl uppercase font-bold m-6 text-sky-900 font-Oswald">Veja as cotações de diversas moedas</h2>
 			<!--Tabela de conversão e cotações-->
-			<div class="flex sm:flex-row sm:gap-0 phone:flex-col phone:gap-y-8 h-5/6">
-				<table class="sm:h-full phone:h-fit sm:w-3/6 phone:w-full bg-gradient-to-br from-blue-800 to-sky-800 mx-auto rounded-3xl">
+			<div class="flex md:flex-row sm:gap-0 phone:flex-col phone:gap-y-8 h-5/6">
+				<table class="sm:h-full phone:h-fit md:w-3/6 phone:w-full bg-gradient-to-br from-blue-800 to-sky-800 mx-auto rounded-3xl">
 					<thead class="bg-sky-900 rounded-t-3xl">
 						<tr>
 							<th class="rounded-tl-3xl"></th>
@@ -93,33 +92,33 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/US.png" alt="Bandeira USA" class="h-8 w-8 sm:block phone:hidden"></th>
+						<tr class="border-b">
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/US.png" alt="Bandeira USA" class="h-8 w-8 md:block phone:hidden"></th>
 							<th id="dolar-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="dolar-value" class="text-lg uppercase text-white"></th>
 						</tr>
-						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/EU.png" alt="Bandeira União Europeia " class="h-8 w-8 sm:block phone:hidden"></th>
+						<tr class="border-b">
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/EU.png" alt="Bandeira União Europeia " class="h-8 w-8 md:block phone:hidden"></th>
 							<th id="euro-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="euro-value" class="text-lg uppercase text-white "></th>
 						</tr>
-						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/CA.png" alt="Bandeira Canadá" class="h-8 w-8 sm:block phone:hidden"></th>
+						<tr class="border-b">
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/CA.png" alt="Bandeira Canadá" class="h-8 w-8 md:block phone:hidden"></th>
 							<th id="dolarCanadense-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="dolarCanadense-value" class="text-lg uppercase text-white"></th>
 						</tr>
-						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/JP.png" alt="Bandeira Japão" class="h-8 w-8 sm:block phone:hidden"></th>
+						<tr class="border-b">
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/JP.png" alt="Bandeira Japão" class="h-8 w-8 md:block phone:hidden"></th>
 							<th id="iene-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="iene-value" class="text-lg uppercase text-white"></th>
 						</tr>
-						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/GB.png" alt="Bandeira Reino Unido" class="h-8 w-8 sm:block phone:hidden"></th>
+						<tr class="border-b">
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/GB.png" alt="Bandeira Reino Unido" class="h-8 w-8 md:block phone:hidden"></th>
 							<th id="libra-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="libra-value" class="text-lg uppercase text-white"></th>
 						</tr>
 						<tr>
-							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/AR.png" alt="Bandeira Argentina" class="h-8 w-8 sm:block phone:hidden"></th>
+							<th class="pl-4"><img src="https://countryflagicons.com/SHINY/64/AR.png" alt="Bandeira Argentina" class="h-8 w-8 md:block phone:hidden"></th>
 							<th id="pesoArgentino-name" class="text-lg uppercase text-white text-left"></th>
 							<th id="pesoArgentino-value" class="text-lg uppercase text-white"></th>
 						</tr>
@@ -145,7 +144,7 @@
 					<p id="paraReal" class="inline-block text-white hidden">p/ Real (BRL)</p>
 				</div>
 				<button id="converterBotao" class="bg-sky-700 p-2 font-bold rounded-md mb-8 hover:bg-sky-800 hover:duration-300 uppercase text-white">converter</button>
-				<p id="resultadoConversao" class="text-white text-lg mx-auto font-bold"><span id="realConverter">R$</span> <span id="resultadoReal" class="bg-white px-6 py-2 rounded-md mr-2 text-sky-900"></span> é equivalente a<span id="resultadoEstrangeiro" class="bg-white text-sky-900 p-4 px-6 py-2 rounded-md ml-2"></span><span id="realInverter" class="hidden"> R$</span> </p>
+				<p id="resultadoConversao" class="text-white text-lg mx-auto font-bold"><span id="realConverter">R$</span> <span id="resultadoReal" class="bg-white px-6 py-2 rounded-md mr-2 text-sky-900"></span> é equivalente a<span id="resultadoEstrangeiro" class="bg-white text-sky-900 px-6 sm:py-2 sm:inline phone:block phone:py-4 rounded-md ml-2 sm:mt-0 phone:mt-2"></span><span id="realInverter" class="hidden"> R$</span> </p>
 			</div>
 		</div>
 	</section>
